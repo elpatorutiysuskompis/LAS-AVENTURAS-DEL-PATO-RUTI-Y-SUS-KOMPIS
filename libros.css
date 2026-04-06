@@ -24,16 +24,18 @@ body {
 }
 
 .cabecera-arte h1 {
-    
+    .cabecera-arte h1 {
     color: white;
-    font-size: 150px
+    font-size: 150px;
     font-family: 'Arial Black', sans-serif;
     text-align: center;
-    /* ESTO ES LO QUE DA EL EFECTO DORADO/RELIEVE */
+    /* EFECTO DORADO CORREGIDO (Faltaba la coma entre las dos sombras) */
     text-shadow: 2px 2px 0px #b8860b, 
                  4px 4px 10px rgba(0,0,0,0.8);
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+   
 }
 
     
