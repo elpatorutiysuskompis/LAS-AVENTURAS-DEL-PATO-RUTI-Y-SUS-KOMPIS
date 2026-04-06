@@ -1,0 +1,34 @@
+h1 {
+    color: #6a1b32; /* El color vino (Burdeos) */
+    text-align: center; /* Al centro, como los grandes */
+    font-family: 'Arial', sans-serif; /* O la que estés usando en el resto de la web */
+    font-size: 45px; /* Un tamaño hermoso para que se lea bien */
+    margin-top: 40px; /* Separación por arriba del banner */
+    margin-bottom: 20px; /* Separación con el texto de "En la parte de contactame..." */
+    text-transform: uppercase; /* Si lo quieres en mayúsculas para que imponga más */
+    font-weight: bold;
+}
+
+p {
+    text-align: center;      /* Centramos el texto para que vaya a juego con el título */
+    font-weight: bold;       /* ¡Aquí tienes la NEGRITA! */
+    max-width: 900px;        /* Evitamos que la frase sea una línea infinita de lado a lado */
+    margin: 30px auto;       /* Esto centra el bloque y le da espacio arriba (con el título) y abajo */
+    line-height: 1.6;        /* Da un poco de espacio entre líneas para que se lea mejor */
+    font-size: 1.1em;        /* Lo subimos un pelín de tamaño para que se vea pro */
+    padding: 0 40px;         /* Le damos un "colchón" a los lados para que no toque los bordes del navegador */
+}
+
+/* Ajuste para que el formulario de Google se vea TOP */
+iframe {
+    display: block;       /* Lo convierte en un bloque sólido */
+    margin: 40px auto;    /* ¡MAGIA! Lo centra horizontalmente y le da aire arriba y abajo */
+     /* Le ponemos un marquito fino color vino para que pegue con el título */
+    border-radius: 10px;  /* Redondeamos las esquinas para que sea más moderno */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1); /* Una sombra suave para que parezca que flota */
+    max-width: 95%;       /* Para que en el móvil no se salga de la pantalla */
+}
+
+header.h1{
+    font-size: 180px;
+}

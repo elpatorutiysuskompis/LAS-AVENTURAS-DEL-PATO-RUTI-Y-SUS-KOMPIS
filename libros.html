@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros - Las Aventuras del Pato Ruti</title>
+    <style>
+        body { background-color: #fdfaf5; margin: 0; font-family: 'Georgia', serif; color: #333; }
+
+        /* --- HEADER 180PX CON TU LOGO.JPG --- */
+        .hero {
+            position: relative;
+            background: url('logo.jpg') no-repeat center center;
+            background-size: cover;
+            height: 180px; /* <--- TU MEDIDA EXACTA */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* FILTRO AZUL TRANSPARENTE PARA QUE SE LEA TODO */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 51, 102, 0.5); 
+            z-index: 1;
+        }
+
+        /* --- NAV A LA DERECHA (TAMAÑO Y FUENTE LIMPIA) --- */
+        nav { position: absolute; top: 0; right: 0; width: 100%; z-index: 10; }
+        nav ul { 
+            display: flex; 
+            justify-content: flex-end; /* <--- A LA DERECHA COMO TE GUSTA */
+            list-style: none; 
+            padding: 20px 40px; 
+            margin: 0; 
+        }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            font-family: sans-serif; /* <--- LETRA LIMPIA EN EL NAV */
+        }
+
+        /* --- TÍTULO H1 DE 180PX --- */
+        .header-content { z-index: 5; margin-top: 30px; }
+        .header-content h1 {
+            color: white; 
+            font-size: 1.8rem; 
+            font-family: 'Georgia', serif;
+            text-transform: uppercase; 
+            margin: 0; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* --- TUS CUADRITOS DE LIBROS (ESTILO POEMARIO) --- */
+        .grid-libros {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            padding: 0 20px;
+        }
+
+        .libro-card {
+            background: white; 
+            border-radius: 15px; 
+            padding: 25px; 
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+            border: 1px solid #eee;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+        }
+
+        .portada-libro { 
+            width: 100%; 
+            max-width: 190px; 
+            height: 270px; 
+            object-fit: cover; 
+            border-radius: 5px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+        }
+
+        .libro-card h3 { 
+            font-family: 'Georgia', serif; 
+            font-size: 1.2rem; 
+            color: #003366; 
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .libro-card p { 
+            font-family: 'Times New Roman', serif; 
+            font-size: 1rem; 
+            line-height: 1.6; 
+            text-align: justify; /* <--- JUSTIFICADO COMO POEMARIO */
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .btn-comprar {
+            background: #003366; 
+            color: white; 
+            text-decoration: none; 
+            padding: 12px 25px;
+            border-radius: 5px; 
+            font-weight: bold; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            font-family: sans-serif;
+        }
+
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="Ruti.html">RUTI</a></li>
+                <li><a href="poemario.html">POEMARIO</a></li>
+                <li><a href="libros.html">LIBROS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h1>
+        </div>
+    </header>
+
+    <main class="grid-libros">
+        <div class="libro-card">
+            <img src="Soledad-locura-y-libertad_W.png" class="portada-libro">
+            <h3>Soledad, Locura y Libertad</h3>
+            <p>Descubre esta obra profunda de Julio Nieto Molina donde la superación y el orgullo se dan la mano en cada página escrita con el corazón.</p>
+            <a href="https://www.amazon.es/Soledad-locura-libertad-Julio-Nieto/dp/8418042461" target="_blank" class="btn-comprar">AMAZON</a>
+        </div>
+
+        <div class="libro-card">
+            <img src="Orgullo Loco.jpg" class="portada-libro">
+            <h3>Orgullo Loco</h3>
+            <p>Un manifiesto necesario sobre la visibilidad y los derechos, rompiendo estigmas con la fuerza de las palabras y la experiencia propia.</p>
+            <a href="https://www.amazon.es/Orgullo-loco-Julio-Nieto-Molina/dp/8418528542" target="_blank" class="btn-comprar">AMAZON</a>
+        </div>
+
+        <div class="libro-card">
+            <img src="ARAÑA JULIO NIETO MOLINA.jpg" class="portada-libro">
+            <h3>La Araña</h3>
+            <p>Una historia atrapante que te sumerge en el universo creativo del autor, donde lo cotidiano se vuelve extraordinario.</p>
+            <a href="https://www.amazon.es/ARA%C3%91A-Julio-Nieto-Molina/dp/8419139639" target="_blank" class="btn-comprar">AMAZON</a>
+        </div>
+
+        <div class="libro-card">
+            <img src="locuras del espacio sideral julio nieto.jpg" class="portada-libro">
+            <h3>Locuras del Espacio Sideral</h3>
+            <p>Próximamente disponible. La nueva aventura literaria que expande el universo del Pato Ruti hacia horizontes desconocidos.</p>
+            <span class="btn-comprar" style="background: #999; cursor: not-allowed;">PRÓXIMAMENTE</span>
+        </div>
+    </main>
+
+    <footer><p>&copy; Creado por Borja Angosto Nieto</p></footer>
+
+</body>
+</html>

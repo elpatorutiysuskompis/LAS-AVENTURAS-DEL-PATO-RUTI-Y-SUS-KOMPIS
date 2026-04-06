@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poemario - Las Aventuras del Pato Ruti</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .grid-poemas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: start;
+        }
+        .poema-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+        .poema-card h3 { 
+            color: #003366; border-bottom: 2px solid #D4AF37; 
+            padding-bottom: 10px; margin-bottom: 15px; font-family: 'Georgia', serif; 
+        }
+        .poema-texto {
+            font-family: 'Georgia', serif; font-style: italic; line-height: 1.8;
+            color: #444; white-space: pre-line; max-height: 120px;
+            overflow: hidden; transition: max-height 0.5s ease;
+        }
+        .poema-texto.abierto { max-height: 3000px; }
+        .btn-leer {
+            margin-top: 15px; background: none; border: 1.5px solid #003366;
+            color: #003366; padding: 8px 20px; border-radius: 25px;
+            cursor: pointer; font-weight: bold; align-self: center;
+        }
+        .btn-leer:hover { background: #003366; color: white; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="Ruti.html">RUTI</a></li>
+                <li><a href="poemario.html">POEMARIO</a></li>
+                <li><a href="libros.html">LIBROS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h1>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <h2 style="text-align: center; color: #003366; font-size: 2.2rem; margin-bottom: 40px;">POEMARIO</h2>
+        
+        <div class="grid-poemas">
+            
+            <article class="poema-card">
+                <h3>Viento y Agua</h3>
+                <div class="poema-texto">Somos 
+Viento y Agua 
+Somos 
+Alma y cuerpo 
+Somos 
+Nada y todo 
+Somos  
+Etéreos y Materia… 
+Un suspiro 
+En el viento, 
+Eternos  
+En el Agua… 
+Somos  
+Palabras 
+En el viento 
+Y actos 
+En el agua… 
+El Agua 
+Nos da la forma, 
+El viento 
+Nos mece 
+En el destino… 
+El Agua  
+Nos hace 
+Flotar, 
+El viento 
+Nos hace  
+Volar… 
+El Agua 
+Es nuestro medio 
+Donde vivimos, 
+El viento  
+Es nuestro medio 
+Donde soñamos… 
+Somos agua, 
+Somos viento, 
+La energía  
+Y el aliento  
+Que nos mueve, 
+Que nos  
+Conmueve, 
+Ante todo  
+Y nada… 
+Y sobre todo 
+Somos vida 
+Antes y después, 
+Antes del agua 
+Y después del viento… 
+Y ahora descansaré  
+En paz, 
+Cómo el agua mecida 
+Por la calma del viento. 
+También bravo… 
+Cómo el agua  
+Enfurecida 
+Y el viento 
+Entornado… 
+¡¡Bravo!! 
+Y ahora 
+Descansaré  
+en paz 
+En la calma 
+Del agua 
+Y… 
+El viento.
+
+<strong>Julio Nieto Molina</strong></div>
+                <button class="btn-leer" onclick="togglePoema(this)">Leer más</button>
+            </article>
+
+            <article class="poema-card">
+                <h3>Los versos</h3>
+                <div class="poema-texto">Los versos  
+A veces fluyen 
+Como el agua, 
+Otras veces 
+Duelen como 
+Un navajazo 
+En el corazón, 
+Otras veces  
+Simplemente  
+No existen  
+Y como por  
+Arte de magia 
+En el papel en blanco 
+Escritos aparecen  
+como si fuera 
+Un milagro 
+De la nada, 
+La inspiración  
+Es un aliado. 
+Otras… 
+El “atocinado” 
+No te deja 
+Plasmar tu alma 
+En cada Verso, 
+Estás colapsado, 
+Duele,duele, duele tanto 
+Que el papel  
+Se arruga  
+Por las lágrimas  
+De un corazón herido 
+De un corazón errante 
+De una persona  
+Que no encuentra 
+Su lugar  
+En este mundo. 
+Pero cierto  
+Es que no,  
+Que no puedo  
+Dejar la poesía. 
+
+<strong>Julio Nieto Molina</strong></div>
+                <button class="btn-leer" onclick="togglePoema(this)">Leer más</button>
+            </article>
+
+            <article class="poema-card">
+                <h3>La Mar Salá</h3>
+                <div class="poema-texto">Dime... ¿Qué te rodea?
+Cada momento, cada segundo,
+A buscarte, a encontrarte, a no dar por perdido nada...
+A reencontrar a tu yo por fin,
+A sentir que has vivido, a tu manera... Por tu camino.
+
+<strong>Julio Nieto Molina</strong></div>
+                <button class="btn-leer" onclick="togglePoema(this)">Leer más</button>
+            </article>
+
+            <article class="poema-card">
+                <h3>Vivir del aire</h3>
+                <div class="poema-texto">Es difícil  
+Vivir del aire, 
+Cuando no se  
+Tiene a nadie… 
+A veces  
+La vida  
+Es un viento, 
+Que saca  
+Mis tormentos  
+De adentro… 
+Necesito respirar 
+Y volver a respirar 
+Para enamorarme 
+Y así de nuevo amar… 
+Amar 
+Es como la mar… 
+Empiezas  
+En un mar menor 
+Arribas a una orilla 
+Para adentrarte  
+En un mar mayor, 
+Y ya luego  
+Perderte 
+Por los 
+Siete mares  
+Del amor…
+
+<strong>Julio Nieto Molina</strong></div>
+                <button class="btn-leer" onclick="togglePoema(this)">Leer más</button>
+            </article>
+
+            <article class="poema-card">
+                <h3>Luna</h3>
+                <div class="poema-texto">Solo pisé  
+La luna 
+Una vez… 
+Ya no recuerdo 
+Si fue en un sueño 
+En realidad 
+Con unos espumosos  
+O con poemas… 
+Se que solo pisé  
+La luna  
+Una vez… 
+No sé  
+Cómo lo hice  
+Sin ser astronauta, 
+Ni tampoco  
+Volando por allí… 
+Pero una vez  
+Pisé la Luna  
+Y sentí flotar  
+Con ella, 
+A su ritmo 
+A su compás, 
+En calma, 
+En silencio… 
+Una vez  
+Pisé la Luna  
+Y no estaba dormido  
+Ni despierto…
+
+<strong>Julio Nieto Molina</strong></div>
+                <button class="btn-leer" onclick="togglePoema(this)">Leer más</button>
+            </article>
+
+            <article class="poema-card">
+                <h3>La locura es el amor</h3>
+                <div class="poema-texto">La locura  
+Es el amor… 
+Que te transforma  
+Entrando 
+Los rayos 
+De sol 
+En tu corazón… 
+La locura 
+Es el amor 
+A veces 
+Tan ingenuo 
+Y otras veces 
+Tan calculador… 
+La locura 
+Es el amor… 
+Tan funesto 
+Tan tóxico 
+Tan conmovedor  
+Tan mágico  
+Y tan  
+Y tan 
+Y tan  
+Inspirador.
+
+<strong>Julio Nieto Molina</strong></div>
+                <button class="btn-leer" onclick="togglePoema(this)">Leer más</button>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Creado por Borja Angosto Nieto</p>
+    </footer>
+
+    <script>
+        function togglePoema(btn) {
+            const texto = btn.previousElementSibling;
+            texto.classList.toggle('abierto');
+            btn.textContent = texto.classList.contains('abierto') ? "Leer menos" : "Leer más";
+        }
+    </script>
+</body>
+</html>

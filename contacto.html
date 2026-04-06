@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Las Aventuras del Pato Ruti</title>
+    <style>
+        body { margin: 0; font-family: 'Georgia', serif; background-color: #ffffff; color: #333; }
+
+        /* --- HEADER 180PX CON TU FOTO LOGO.JPG --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 180px; /* <--- TU MEDIDA EXACTA */
+            background: url('logo.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Capa azul para que el texto resalte sobre la foto */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 51, 102, 0.55); 
+            z-index: 1;
+        }
+
+        /* --- MENÚ A LA DERECHA CON LETRA LIMPIA --- */
+        nav { position: absolute; top: 0; right: 0; width: 100%; z-index: 10; }
+        nav ul { 
+            display: flex; 
+            justify-content: flex-end; /* <--- A LA DERECHA */
+            list-style: none; 
+            padding: 20px 40px; 
+            margin: 0; 
+        }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            font-family: sans-serif; /* <--- LETRA LIMPIA */
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: #D4AF37; }
+
+        /* --- TÍTULO H1 DE 180PX --- */
+        .header-content { z-index: 5; margin-top: 30px; }
+        .header-content h1 {
+            color: white;
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem; /* <--- TAMAÑO EQUILIBRADO */
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* --- CUERPO DE LA PÁGINA --- */
+        .main-contacto {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .main-contacto h2 {
+            color: #003366;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+        }
+
+        .texto-contacto {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify; /* <--- JUSTIFICADO COMO TE GUSTA */
+            padding: 40px;
+            border-left: 6px solid #D4AF37;
+            background: #fdfaf5;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* --- FORMULARIO --- */
+        .form-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="Ruti.html">RUTI</a></li>
+                <li><a href="poemario.html">POEMARIO</a></li>
+                <li><a href="libros.html">LIBROS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h1>
+        </div>
+    </header>
+
+    <main class="main-contacto">
+        <h2>CONTÁCTAME</h2>
+        <div class="texto-contacto">
+            En la parte de contáctame, os dejamos un formulario de contacto para poder solucionar de 
+            forma rápida vuestras posibles incidencias aunque también está dirigido a que si alguien, 
+            quiere dejar algún bonito mensaje siempre será bien recibido, aquí se busca respeto y 
+            buen rollo. ¡Cualquier duda sobre el Pato Ruti o los libros, aquí estoy!
+        </div>
+
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScF-4HvkgfBp82Ypmt2LVXhLgkOx9vn8McPG5IHvdbXsfHhkg/viewform?embedded=true" width="640" height="722" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #888;">
+        <p>&copy; creado por Borja Angosto Nieto</p>
+    </footer>
+
+</body>
+</html>

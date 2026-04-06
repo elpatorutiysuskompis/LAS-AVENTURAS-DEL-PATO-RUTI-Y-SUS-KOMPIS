@@ -1,0 +1,129 @@
+/* 1. RESET (PARA QUE NADA SE MOLESTE) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* 2. TU CABECERA (LA DE LA CAPTURA QUE TE GUSTA) */
+.cabecera-arte {
+    width: 100%;
+    height: 60vh; 
+    background-image: url('logo.jpg'); 
+    background-size: cover; 
+    background-position: center 35%; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.cabecera-arte h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 2px 2px 0px #b8860b, 4px 4px 10px rgba(0,0,0,0.8);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* 3. TU MENÚ (TAL CUAL ESTABA) */
+.menu {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f5f5dc;
+    font-weight: 900;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+/* 4. EL CONTENIDO (ESTO ES LO QUE BAJAMOS) */
+.contenedor-principal {
+    max-width: 400px;
+    margin: 100px auto 50px auto; /* 100px para que haya blanco debajo del dibujo */
+    padding: 0 40px;
+}
+
+.fila-contenido {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.video-container {
+    flex: 0 0 250px; 
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.texto-container {
+    flex: 1;
+}
+
+.texto-container h3 {
+    font-size: 2rem;
+    color: #8d4a5e; /* Tu color burdeos */
+    font-family: 'Arial Black', sans-serif;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.texto-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+footer{
+    justify-content: center;
+    text-align: center;
+    
+}
+
+/* ESTO HARÁ QUE EN EL MÓVIL TODO SE PONGA UNO DEBAJO DE OTRO */
+@media (max-width: 768px) {
+    .fila-contenido {
+        flex-direction: column; /* El texto baja debajo del vídeo */
+        align-items: center;
+        text-align: center;
+    }
+
+    .video-container {
+        flex: 0 0 100%;
+        width: 100%; /* El vídeo ocupa todo el ancho del móvil */
+    }
+
+    .texto-container {
+        padding: 20px 0;
+    }
+
+    .cabecera-arte h1 {
+        font-size: 2rem; /* Achicamos el título para que no se corte */
+    }
+
+    .cierre-intervencion h1 {
+        font-size: 1.8rem;
+    }
+}
