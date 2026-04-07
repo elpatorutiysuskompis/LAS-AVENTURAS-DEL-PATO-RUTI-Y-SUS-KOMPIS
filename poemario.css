@@ -119,3 +119,11 @@
         line-height: 1.2;
     }
 }
+
+
+
+header.h1{
+    font-size: 22px !important; /* Lo bajamos a 22px para que sea bajito y elegante */
+    margin-top: 50px !important; /* Le damos aire por arriba para que no pise al menú */
+    letter-spacing: 1px !important; /* Un pelín menos de separación para que no sea tan ancho */
+}
