@@ -47,3 +47,40 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,1); /* Para que no se pierda en el cielo */
     transition: 0.3s ease;
 }
+/* --- 1. EL MENÚ: LO ALEJAMOS DEL TÍTULO --- */
+.menu {
+    position: absolute !important;
+    top: 10px !important; /* Más arriba */
+    right: 20px !important;
+    z-index: 20 !important;
+}
+
+.menu ul {
+    display: flex !important;
+    list-style: none !important;
+    gap: 15px !important; /* Espacio entre INICIO, RUTI, etc. */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menu a {
+    color: white !important;
+    font-family: 'Georgia', serif !important;
+    font-size: 14px !important; /* Un pelín más pequeña para que no pese tanto */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    letter-spacing: 1px !important;
+}
+
+/* --- 2. EL TÍTULO: LO BAJAMOS Y ACHICAMOS --- */
+.cabecera-arte h1 {
+    font-family: 'Arial Black', sans-serif !important;
+    color: white !important;
+    font-size: 26px !important; /* Lo bajamos de 35px a 26px para que no choque */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    margin-top: 50px !important; /* ESTO ES LO QUE EMPUJA EL TÍTULO HACIA ABAJO */
+    letter-spacing: 1px !important;
+    text-align: center;
+    max-width: 85%;
+}
