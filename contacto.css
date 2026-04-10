@@ -32,3 +32,7 @@ iframe {
 header.h1{
     font-size: 180px;
 }
+
+body {
+    background-color: #e2d1b3 !important;
+}

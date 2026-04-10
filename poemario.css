@@ -131,3 +131,12 @@ footer.p{
     text-align: center;
     justify-content: center;
 }
+
+body {
+    background-color: #e2d1b3; /* El color que hemos elegido */
+    font-family: 'Lora', serif; /* La fuente de libro/poesía */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}

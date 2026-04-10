@@ -1,10 +1,28 @@
-/* --- 1. ESTILOS GENERALES --- */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Color Arena/Pergamino con cuerpo */
+    background-color: #e2d1b3; 
+    
+    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
     color: #333;
+}
+
+/* Vamos a darle un fondo blanco a tu sección para que no se pierda */
+#quien-soy {
+    background-color: #ffffff;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Para que la tarjeta de "Tripulantes" resalte más sobre el fondo oscuro */
+.tripulantes-card {
+    background-color: #ffffff;
+    border: 2px solid #003366; /* Azul marino para que haga juego con el título */
 }
 
 /* --- 2. CABECERA UNIFICADA --- */

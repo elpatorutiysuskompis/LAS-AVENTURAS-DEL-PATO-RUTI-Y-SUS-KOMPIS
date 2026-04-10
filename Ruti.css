@@ -6,8 +6,12 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #ffffff;
+   background-color: #e2d1b3; 
+    
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 /* 2. TU CABECERA AJUSTADA (ESTILO LIBROS) */

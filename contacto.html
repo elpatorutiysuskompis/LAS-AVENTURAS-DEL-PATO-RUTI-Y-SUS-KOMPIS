@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Las Aventuras del Pato Ruti</title>
     <style>
-        body { margin: 0; font-family: 'Georgia', serif; background-color: #ffffff; color: #333; }
+        /* COLOR ARENA UNIFICADO */
+        body { 
+            margin: 0; 
+            font-family: 'Georgia', serif; 
+            background-color: #e2d1b3 !important; 
+            color: #333; 
+        }
 
-        /* --- HEADER 180PX CON TU FOTO LOGO.JPG --- */
+        /* --- HEADER 180PX --- */
         .hero {
             position: relative;
             width: 100%;
-            height: 180px; /* <--- TU MEDIDA EXACTA */
+            height: 180px; 
             background: url('logo.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
@@ -19,22 +25,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            border-bottom: 4px solid gold;
+            border-bottom: 4px solid #D4AF37;
         }
 
-        /* Capa azul para que el texto resalte sobre la foto */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-        }
-
-        /* --- MENÚ A LA DERECHA CON LETRA LIMPIA --- */
         nav { position: absolute; top: 0; right: 0; width: 100%; z-index: 10; }
         nav ul { 
             display: flex; 
-            justify-content: flex-end; /* <--- A LA DERECHA */
+            justify-content: flex-end; 
             list-style: none; 
             padding: 20px 40px; 
             margin: 0; 
@@ -46,23 +43,19 @@
             font-weight: bold; 
             text-transform: uppercase; 
             font-size: 0.85rem;
-            font-family: sans-serif; /* <--- LETRA LIMPIA */
-            transition: 0.3s;
+            font-family: sans-serif;
         }
-        nav ul li a:hover { color: #D4AF37; }
 
-        /* --- TÍTULO H1 DE 180PX --- */
-        .header-content { z-index: 5; margin-top: 30px; }
         .header-content h1 {
             color: white;
             font-family: 'Georgia', serif;
-            font-size: 1.8rem; /* <--- TAMAÑO EQUILIBRADO */
+            font-size: 1.8rem;
             text-transform: uppercase;
             margin: 0;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
 
-        /* --- CUERPO DE LA PÁGINA --- */
+        /* --- CUERPO --- */
         .main-contacto {
             max-width: 850px;
             margin: 60px auto;
@@ -70,39 +63,34 @@
             text-align: center;
         }
 
-        .main-contacto h2 {
-            color: #003366;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            font-family: 'Georgia', serif;
-            text-transform: uppercase;
-        }
-
         .texto-contacto {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #333;
-            text-align: justify; /* <--- JUSTIFICADO COMO TE GUSTA */
+            text-align: justify; 
             padding: 40px;
             border-left: 6px solid #D4AF37;
-            background: #fdfaf5;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            background: #ffffff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             margin-bottom: 50px;
             font-family: 'Times New Roman', Times, serif;
         }
 
-        /* --- FORMULARIO --- */
         .form-container {
             width: 100%;
             display: flex;
             justify-content: center;
             margin-bottom: 60px;
+            background: #ffffff;
+            padding: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         iframe {
             max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: none;
         }
     </style>
 </head>
@@ -124,7 +112,7 @@
     </header>
 
     <main class="main-contacto">
-        <h2>CONTÁCTAME</h2>
+        <h2 style="color: #003366; text-transform: uppercase; margin-bottom: 30px;">CONTÁCTAME</h2>
         <div class="texto-contacto">
             En la parte de contáctame, os dejamos un formulario de contacto para poder solucionar de 
             forma rápida vuestras posibles incidencias aunque también está dirigido a que si alguien, 
@@ -137,7 +125,7 @@
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 40px; color: #888;">
+    <footer style="text-align: center; padding: 40px; color: #444; font-weight: bold;">
         <p>&copy; creado por Borja Angosto Nieto</p>
     </footer>
 
