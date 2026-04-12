@@ -134,3 +134,32 @@ main {
     margin: 0 auto !important;
     padding: 20px !important;
 }
+
+/* Esto arregla el Error 1 (Inicio y menú amontonados) */
+@media (max-width: 768px) {
+    .menu ul {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea */
+        justify-content: center;
+        gap: 10px; /* Da espacio entre los botones */
+        padding: 10px 0;
+    }
+
+    .menu li {
+        margin: 5px;
+    }
+
+    .menu a {
+        font-size: 14px; /* Un poco más pequeño para que quepa mejor */
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.1); /* Les da un toquecito de fondo para que se vean como botones */
+        border-radius: 5px;
+    }
+
+    /* Ajustamos el título para que no choque con el menú */
+    .cabecera-arte h1 {
+        font-size: 1.2rem !important;
+        line-height: 1.4;
+        margin-top: 20px;
+    }
+}
