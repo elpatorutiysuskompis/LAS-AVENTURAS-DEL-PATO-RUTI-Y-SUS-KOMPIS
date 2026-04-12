@@ -1,165 +1,81 @@
+/* 1. BASES GENERALES */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
 body {
-    /* Color Arena/Pergamino con cuerpo */
-    background-color: #e2d1b3; 
-    
+    background-color: #e2d1b3; /* Tu color Arena/Pergamino */
     font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #222;
+    line-height: 1.8;
 }
 
-/* Vamos a darle un fondo blanco a tu sección para que no se pierda */
-#quien-soy {
-    background-color: #ffffff;
-    margin: 40px auto;
-    padding: 30px;
-    max-width: 900px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-/* Para que la tarjeta de "Tripulantes" resalte más sobre el fondo oscuro */
-.tripulantes-card {
-    background-color: #ffffff;
-    border: 2px solid #003366; /* Azul marino para que haga juego con el título */
-}
-
-/* --- 2. CABECERA UNIFICADA --- */
+/* 2. CABECERA (LOGO Y TÍTULO) */
 .cabecera-arte {
-    width: 100% !important;
-    height: 180px !important;
-    background-image: url('logo.jpg') !important;
+    width: 100%;
+    min-height: 200px;
+    background-image: url('logo.jpg');
     background-size: cover;
     background-position: center;
-    position: relative !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-bottom: 4px solid #b8860b;
+    padding: 20px 0;
 }
 
-/* EL MENÚ ARRIBA A LA DERECHA */
-.menu {
-    position: absolute !important;
-    top: 10px !important;
-    right: 20px !important;
-    z-index: 10;
-}
-
+/* MENÚ LIMPIO (Sin recuadros) */
 .menu ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 15px;
+    gap: 20px;
 }
 
 .menu a {
-    color: white !important;
+    color: white;
     text-decoration: none;
-    font-family: 'Georgia', serif !important; /* LETRA DE AUTOR */
     font-weight: bold;
-    font-size: 15px !important;
-    letter-spacing: 1.5px !important;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 5px rgba(0,0,0,1);
-    transition: 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
-.menu a:hover {
-    color: #D4AF37 !important;
-    transform: scale(1.05);
-}
-
-/* EL TÍTULO (BAJAMOS UN PELÍN EL TAMAÑO PARA QUE NO CHOQUE) */
-.cabecera-arte h1 {
-    color: white !important;
-    font-family: 'Arial Black', sans-serif !important;
-    font-size: 28px !important; 
-    text-transform: uppercase !important;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8) !important;
-    letter-spacing: 2px !important;
-    margin-top: 40px !important; /* Esto evita que el título pise al menú */
-    text-align: center;
-    max-width: 90%;
-}
-
-/* --- 3. CONTENIDO --- */
-.contenedor {
-    max-width: 800px;
+/* 3. CONTENIDO SIN CAJAS BLANCAS */
+main, #quien-soy, .contenedor {
+    background-color: transparent !important; /* QUITAMOS EL BLANCO */
+    box-shadow: none !important; /* QUITAMOS SOMBRAS DE CAJA */
+    max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 20px;
 }
 
-/* --- 4. RESPONSIVE MÓVIL --- */
+/* 4. CAMBIO 2: FOTO DE JULIO MÁS PEQUEÑA */
+img[src*="julio"], .foto-perfil {
+    width: 250px !important; /* Tamaño reducido como pediste */
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 30px auto;
+    /* Una sombra suave para que la foto no parezca pegada */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); 
+}
+
+/* 5. TEXTO ESTILO LIBRO */
+p {
+    font-size: 20px;
+    text-align: justify;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+/* AJUSTE MÓVIL */
 @media (max-width: 768px) {
-    .cabecera-arte {
-        height: auto !important;
-        padding: 20px 0 !important;
+    img[src*="julio"] {
+        width: 180px !important;
     }
-    .menu {
-        position: relative !important;
-        top: 0 !important;
-        right: 0 !important;
-        margin-bottom: 10px;
-    }
-    .menu ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .cabecera-arte h1 {
-        font-size: 1.3rem !important;
-        margin-top: 0 !important;
-    }
-}
-
-/* IMPORTAMOS UNA FUENTE LITERARIA DE VERDAD */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
-
-body, p, div {
-    font-family: 'Lora', serif !important;
-    line-height: 1.8 !important; /* Más espacio entre líneas para que sea un descanso leer */
-    color: #222 !important; /* Un gris casi negro, más suave que el negro puro */
-    font-size: 20px !important; /* Tamaño generoso para no forzar la vista */
-    text-align: justify !important; /* Texto alineado por ambos lados como en un libro */
-}
-
-/* ESTO HACE QUE EL TEXTO NO SE PEGUE A LOS BORDES */
-main {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
-}
-
-/* Esto arregla el Error 1 (Inicio y menú amontonados) */
-@media (max-width: 768px) {
-    .menu ul {
-        display: flex;
-        flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea */
-        justify-content: center;
-        gap: 10px; /* Da espacio entre los botones */
-        padding: 10px 0;
-    }
-
-    .menu li {
-        margin: 5px;
-    }
-
-    .menu a {
-        font-size: 14px; /* Un poco más pequeño para que quepa mejor */
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.1); /* Les da un toquecito de fondo para que se vean como botones */
-        border-radius: 5px;
-    }
-
-    /* Ajustamos el título para que no choque con el menú */
-    .cabecera-arte h1 {
-        font-size: 1.2rem !important;
-        line-height: 1.4;
-        margin-top: 20px;
+    p {
+        font-size: 18px;
+        text-align: left; /* En móvil se lee mejor así */
     }
 }
