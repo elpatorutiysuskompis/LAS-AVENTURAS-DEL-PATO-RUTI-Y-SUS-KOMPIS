@@ -110,3 +110,64 @@ body {
         width: 75% !important;
     }
 }
+
+/* --- ARREGLO PARA RUTI 2, 3, 4 y 5 (NAV DE LOS HUEVOS) --- */
+
+/* Forzamos a que cualquier nav o lista de menú se ponga a la derecha y en fila */
+nav, .menu, header ul {
+    position: absolute !important;
+    top: 25px !important;
+    right: 30px !important;
+    left: auto !important;
+    display: flex !important;
+    list-style: none !important; /* Quita los puntos negros */
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+}
+
+/* Forzamos a que los elementos de la lista no tengan puntos y estén en fila */
+nav li, .menu li, header li {
+    list-style-type: none !important;
+    margin-left: 20px !important;
+    display: inline-block !important;
+}
+
+/* Ponemos los enlaces blancos, pequeños y con sombra como en el Inicio */
+nav a, .menu a, header ul a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    font-family: 'Times New Roman', serif !important;
+    text-transform: uppercase !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1) !important;
+}
+
+/* Arreglamos el título de esas páginas que ahora sale negro y mal puesto */
+header h1, .titulo-ruti {
+    color: white !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding-top: 100px !important;
+    font-size: 35px !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8) !important;
+    display: block !important;
+}
+
+/* En móvil, que no se amontone */
+@media (max-width: 768px) {
+    nav, .menu, header ul {
+        position: absolute !important;
+        top: 10px !important;
+        right: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    header h1 {
+        font-size: 20px !important;
+        padding-top: 70px !important;
+    }
+}
