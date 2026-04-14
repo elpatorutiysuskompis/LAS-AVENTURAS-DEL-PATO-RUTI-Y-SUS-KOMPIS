@@ -29,34 +29,35 @@ body {
 /* EL MENÚ ARRIBA A LA DERECHA */
 /* EL MENÚ ARRIBA A LA DERECHA (EL AJUSTE FINAL) */
 /* EL MENÚ A LA DERECHA - ATAQUE DEFINITIVO */
+/* EL MENÚ FLUIDO (COMO EN POEMARIO Y RUTI) */
 .menu {
     position: absolute !important;
     top: 30px !important;
-    right: 50px !important; /* Esto lo ancla a la derecha sí o sí */
-    left: auto !important;  /* Anula cualquier centrado previo */
-    width: auto !important;
+    right: 50px !important;
+    width: auto !important; /* Deja que el menú se estire lo que necesite */
     background: transparent !important;
+    z-index: 100;
 }
 
 .menu ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 30px;
+    display: flex !important;
+    flex-direction: row !important; /* Fuerza una sola fila */
+    flex-wrap: nowrap !important;   /* Prohibido saltar de línea en PC */
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 35px !important; /* Espacio generoso entre cada botón */
 }
+
 .menu a {
-    /* MANTENEMOS TU ESTILO LIMPIO */
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: white !important; 
-    font-family: 'Times New Roman', Times, serif; 
-    text-transform: uppercase;
-    font-size: 18px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,1); /* Sombra fuerte para que se lea sobre el cielo */
-    text-decoration: none;
-    font-weight: bold;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    text-transform: uppercase !important;
+    font-size: 18px !important;
+    text-shadow: 2px 2px 5px rgba(0,0,0,1) !important;
+    white-space: nowrap !important; /* Evita que una palabra se parta en dos */
 }
 .menu a:hover {
     color: #b8860b !important;
