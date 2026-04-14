@@ -1,135 +1,112 @@
-/* 1. BASES GENERALES */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+/* 1. RESET GENERAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: #e2d1b3;
     font-family: 'Lora', serif;
-    margin: 0;
-    padding: 0;
     color: #222;
     line-height: 1.8;
 }
 
-/* 2. CABECERA */
+/* 2. CABECERA (EL LOGO) */
 .cabecera-arte {
     width: 100%;
-    height: 400px; /* Un pelín más para que luzca el dibujo */
-    background-image: url('logo.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 420px;
+    background: url('logo.jpg') center/cover no-repeat;
+    position: relative;
     border-bottom: 4px solid #b8860b;
-    position: relative; /* ESTO ES CLAVE */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el H1 horizontalmente */
 }
 
-/* 3. EL MENÚ: FLOTANDO A LA DERECHA */
-/* EL MENÚ A LA DERECHA (NUEVO INTENTO BLINDADO) */
-/* EL MENÚ ARRIBA A LA DERECHA */
-/* EL MENÚ ARRIBA A LA DERECHA (EL AJUSTE FINAL) */
-/* EL MENÚ A LA DERECHA - ATAQUE DEFINITIVO */
-/* EL MENÚ FLUIDO (COMO EN POEMARIO Y RUTI) */
-.menu {
+/* 3. MENÚ: MINI, A LA DERECHA Y LIMPIO */
+.menu-pequeno {
     position: absolute !important;
-    top: 30px !important;
-    right: 50px !important;
-    width: auto !important; /* Deja que el menú se estire lo que necesite */
-    background: transparent !important;
-    z-index: 100;
+    top: 20px !important;
+    right: 30px !important;
+    left: auto !important;
 }
 
-.menu ul {
+.menu-pequeno ul {
     display: flex !important;
-    flex-direction: row !important; /* Fuerza una sola fila */
-    flex-wrap: nowrap !important;   /* Prohibido saltar de línea en PC */
     list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 35px !important; /* Espacio generoso entre cada botón */
+    gap: 15px !important;
 }
 
-.menu a {
+.menu-pequeno a {
     color: white !important;
+    background: none !important;
+    border: none !important;
     text-decoration: none !important;
     font-weight: bold !important;
-    font-family: 'Times New Roman', Times, serif !important;
-    text-transform: uppercase !important;
-    font-size: 18px !important;
-    text-shadow: 2px 2px 5px rgba(0,0,0,1) !important;
-    white-space: nowrap !important; /* Evita que una palabra se parta en dos */
-}
-.menu a:hover {
-    color: #b8860b !important;
-    transform: scale(1.1);
+    font-family: 'Times New Roman', serif !important;
+    font-size: 13px !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1) !important;
 }
 
-
-
-/* 4. TEXTOS Y CONTENIDO */
-p {
-    font-family: 'Lora', serif;
-    font-size: 20px;
+/* 4. TÍTULO: BLANCO NUCLEAR Y CENTRADO */
+.titulo-principal {
+    color: #ffffff !important; /* Blanco total */
+    font-family: 'Times New Roman', serif !important;
+    font-size: 45px !important;
     text-align: center !important;
-    max-width: 850px;
-    margin: 30px auto;
-    padding: 0 20px;
+    text-transform: uppercase !important;
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.9) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-top: 110px !important; /* Lo baja al sitio justo */
+    display: block !important;
 }
 
-/* FOTO DE JULIO: IZQUIERDA EN PC, CENTRADA EN MÓVIL */
-/* FOTO DE JULIO: IZQUIERDA EN PC */
-img[src*="PRUEBA"], img[src*="PAGINA"], img[src*="WEB"] {
-    width: 250px !important;
-    height: auto;
-    float: left !important; /* Añadimos important para ganar la pelea */
-    margin: 10px 30px 15px 0 !important; 
-    border-radius: 15px;
-    display: block; /* Mejor block con float para que el texto fluya */
+/* 5. CONTENIDO: FOTO Y TEXTO CENTRADOS */
+.contenedor-biografia, main {
+    max-width: 850px !important;
+    margin: 0 auto !important;
+    padding: 60px 20px !important;
+    text-align: center !important;
+    display: block !important;
+    float: none !important;
 }
 
-/* Limpieza para que lo de abajo no se suba donde no debe */
-.contenedor::after, main::after {
-    content: "";
-    display: table;
-    clear: both;
+/* Forzamos que la foto no flote y se centre */
+.foto-julio-central, img[src*="PAGINA"], img[src*="PRUEBA"] {
+    width: 280px !important;
+    height: auto !important;
+    border-radius: 15px !important;
+    margin: 0 auto 30px auto !important;
+    display: block !important;
+    float: none !important; /* Matamos el float aquí también */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
 }
 
-/* AJUSTE MAESTRO PARA MÓVIL */
+/* Texto centrado */
+.texto-presentacion p, p {
+    font-size: 19px !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+    line-height: 1.8 !important;
+}
+
+/* 6. RESPONSIVE MÓVIL */
 @media (max-width: 768px) {
-    .cabecera-arte {
-        height: auto !important; /* Que la caja crezca para que quepa todo */
-        min-height: 320px;
-        padding: 60px 10px 20px 10px; /* Hueco arriba para el menú */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    /* El menú arriba pero con espacio */
-    .menu {
-        position: absolute !important;
-        top: 15px !important;
-        left: 0 !important;
+    .cabecera-arte { height: 280px !important; }
+    
+    .menu-pequeno {
         right: 0 !important;
+        left: 0 !important;
         width: 100% !important;
-        display: flex;
-        justify-content: center; /* En móvil, mejor centrado para que no se corte */
+        display: flex !important;
+        justify-content: center !important;
+        top: 10px !important;
     }
 
-    .menu ul {
-        gap: 12px; /* Un pelín más juntos para que quepan en una línea */
-        flex-wrap: wrap; 
-        justify-content: center;
+    .titulo-principal {
+        font-size: 24px !important;
+        padding-top: 80px !important;
     }
 
-    .menu a {
-        font-size: 13px; /* Tamaño ideal para móvil */
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-    }
-
-    /* El título bajando un poco para no chocar con el menú */
-    .cabecera-arte h1, .cabecera-arte div {
-        font-size: 1.6rem !important;
-        margin-top: 20px;
+    .foto-julio-central, img[src*="PAGINA"] {
+        width: 75% !important;
     }
 }
