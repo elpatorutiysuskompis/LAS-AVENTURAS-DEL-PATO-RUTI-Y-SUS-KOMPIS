@@ -1,4 +1,4 @@
-/* 1. RESET (PARA QUE NADA SE MOLESTE) */
+/* 1. RESET TOTAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,159 +6,79 @@
 }
 
 body {
-   background-color: #e2d1b3; 
-    
+    background-color: #e2d1b3; 
     font-family: 'Lora', serif;
-    margin: 0;
-    padding: 0;
     color: #333;
+    overflow-x: hidden; /* Evita que la web se mueva de lado en móvil */
 }
 
-/* 2. TU CABECERA AJUSTADA (ESTILO LIBROS) */
-.cabecera-arte {
+/* 2. CABECERA UNIFICADA (Para que no choque .hero con .cabecera-arte) */
+.hero, .cabecera-arte {
     width: 100%;
-    height: 180px !important; /* Altura fija para que no sea gigante */
-    background-image: url('logo.jpg'); 
-    background-size: cover; 
-    background-position: center; 
+    height: 180px !important;
+    background: url('logo.jpg') no-repeat center center;
+    background-size: cover;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 !important;
+    border-bottom: 4px solid #D4AF37;
 }
 
-.cabecera-arte h1 {
-    color: white;
-    font-size: 2.2rem !important; /* Tamaño equilibrado */
+.hero h1, .cabecera-arte h1, .header-content h1 {
+    color: white !important;
+    font-size: 1.8rem !important;
     font-family: 'Arial Black', sans-serif;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px !important; /* TUS 2PX MÁGICOS */
-    margin: 0 !important;
+    margin-top: 40px !important; /* Espacio para que no lo tape el menú */
 }
 
-/* 3. TU MENÚ (SUBIDO ARRIBA A LA DERECHA) */
-.menu {
+/* 3. MENÚ (Derecha en PC, Centro en Móvil) */
+nav, .menu {
     position: absolute !important;
-    top: 15px; /* Lo subimos para que no moleste abajo */
-    right: 30px;
-    display: flex;
-    gap: 20px;
+    top: 10px;
+    right: 20px;
+    z-index: 10;
 }
 
-.menu a {
+nav ul, .menu {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+nav ul li a, .menu a {
     text-decoration: none;
-    color: #f5f5dc;
+    color: #f5f5dc !important;
     font-weight: 900;
     font-family: 'Arial Black', sans-serif;
     text-transform: uppercase;
+    font-size: 0.8rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
 
-/* 4. EL CONTENIDO (ESTO ES LO QUE BAJAMOS) */
-.contenedor-principal {
-    max-width: 400px;
-    margin: 100px auto 50px auto; /* 100px para que haya blanco debajo del dibujo */
-    padding: 0 40px;
-}
-
-.fila-contenido {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 80px;
-}
-
-.video-container {
-    flex: 0 0 250px; 
-    aspect-ratio: 16 / 9;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.video-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.texto-container {
-    flex: 1;
-}
-
-.texto-container h3 {
-    font-size: 2rem;
-    color: #8d4a5e; /* Tu color burdeos */
-    font-family: 'Arial Black', sans-serif;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.texto-container p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-}
-
-footer{
-    justify-content: center;
-    text-align: center;
-    
-}
-
-/* ESTO HARÁ QUE EN EL MÓVIL TODO SE PONGA UNO DEBAJO DE OTRO */
-@media (max-width: 768px) {
-    .fila-contenido {
-        flex-direction: column; /* El texto baja debajo del vídeo */
-        align-items: center;
-        text-align: center;
-    }
-
-    .video-container {
-        flex: 0 0 100%;
-        width: 100%; /* El vídeo ocupa todo el ancho del móvil */
-    }
-
-    .texto-container {
-        padding: 20px 0;
-    }
-
-    .cabecera-arte h1 {
-        font-size: 2rem; /* Achicamos el título para que no se corte */
-    }
-
-    .cierre-intervencion h1 {
-        font-size: 1.8rem;
-    }
-}
-
-/* --- RESCATE DE LOS VÍDEOS --- */
-
-/* --- DISEÑO VERTICAL (VÍDEO ARRIBA, TEXTO ABAJO) --- */
-
-.contenedor {
-    max-width: 800px; /* Un poco más estrecho para que se vea mejor en vertical */
+/* 4. CONTENIDO VERTICAL (Vídeos y Libros) */
+.contenedor, .grid-libros, .main-contacto {
+    max-width: 900px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .fila-contenido {
     display: flex;
-    flex-direction: column; /* ¡ESTA ES LA CLAVE! Pone uno sobre otro */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-bottom: 80px;
-    padding-bottom: 40px;
-    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 60px;
 }
 
 .video-container {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 700px; /* Pero no se hace gigante en pantallas grandes */
+    width: 100%;
+    max-width: 700px;
     aspect-ratio: 16 / 9;
     border-radius: 15px;
     overflow: hidden;
@@ -171,106 +91,55 @@ footer{
     border: none;
 }
 
-.texto-bio {
-    width: 100%;
-    max-width: 700px;
-    text-align: left; /* El texto se queda alineado normal */
-}
-
-.titulo-video {
-    color: #003366;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    font-family: 'Arial Black', sans-serif;
-}
-
-/* RESPONSIVE AUTOMÁTICO */
-@media (max-width: 600px) {
-    .titulo-video {
-        font-size: 1.4rem;
-    }
-    .contenedor {
-        padding: 0 15px;
-    }
-}
-
-/* ============================================================
-   BLOQUE BLANCO DEFINITIVO - CIERRE DE PÁGINA
-   ============================================================ */
-
-footer, .pie-pagina, .copyright {
+/* 5. EL BLOQUE BLANCO (FOOTER) */
+footer, .pie-pagina {
     width: 100% !important;
-    padding: 80px 0 !important;
+    padding: 60px 0 !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
-    background-color: transparent !important; /* Fondo crema de la web */
+    background-color: transparent !important;
     clear: both !important;
 }
 
-footer p, .pie-pagina p, .copyright p {
-    background-color: #ffffff !important; /* Tarjeta blanca */
-    color: #000000 !important;           /* Texto negro */
-    padding: 20px 50px !important;       /* Relleno del bloque */
-    border-radius: 12px !important;      /* Esquinas suaves */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important; /* Sombra elegante */
-    display: inline-block !important;
-    font-size: 17px !important;
-    text-align: center !important;
-    border: 1px solid #eeeeee !important;
-    margin: 0 auto !important;
+footer p, .pie-pagina p {
+    background-color: #ffffff !important;
+    padding: 20px 40px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
     font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    border: 1px solid #eee !important;
 }
 
-footer strong, .pie-pagina strong {
-    color: #000000 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-}
-
-/* AJUSTE PARA MÓVILES */
-@media (max-width: 768px) {
-    footer p, .pie-pagina p, .copyright p {
-        padding: 15px 30px !important;
-        font-size: 14px !important;
-        width: 85% !important;
-    }
-}
-
-/* --- ARREGLO MAESTRO PARA MÓVIL --- */
+/* ============================================================
+   SOLUCIÓN AL "CHOQUE DE TRENES" EN MÓVIL
+   ============================================================ */
 @media (max-width: 600px) {
-    /* El header necesita más espacio para que no se amontone todo */
-    .hero { 
-        height: auto !important; 
-        padding: 60px 20px !important; 
+    .hero, .cabecera-arte {
+        height: 220px !important; /* Más alto para que quepa todo */
     }
 
-    /* El menú: los enlaces uno al lado del otro pero más pequeños */
-    nav ul { 
-        justify-content: center !important; 
-        padding: 10px !important; 
-        flex-wrap: wrap !important; 
+    nav, .menu {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 100%;
+        background: rgba(0,0,0,0.3);
+        padding: 10px 0;
     }
-    nav ul li { margin: 5px 10px !important; }
-    nav ul li a { font-size: 0.7rem !important; }
 
-    /* El título: bajamos el tamaño para que no ocupe toda la pantalla */
-    .header-content h1 { 
-        font-size: 1.4rem !important; 
-        line-height: 1.2 !important;
+    nav ul, .menu {
+        justify-content: center !important;
+        gap: 10px;
+    }
+
+    nav ul li a, .menu a {
+        font-size: 0.65rem !important;
+    }
+
+    .hero h1, .cabecera-arte h1 {
+        font-size: 1.2rem !important;
         margin-top: 20px !important;
-    }
-
-    /* El Video de YouTube: que no se salga de la pantalla */
-    iframe, .video-container {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9; /* Esto mantiene la forma del video */
-    }
-
-    /* El texto de la biografía o descripciones */
-    .texto-contacto, .texto-presentacion {
-        padding: 20px !important;
-        font-size: 1rem !important;
+        padding: 0 10px;
     }
 }
