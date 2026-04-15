@@ -7,29 +7,27 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://apis.google.com/js/platform.js"></script>
     <style>
-        /* RESET Y FONDO BODY */
         body { margin: 0; padding: 0; background-color: #d2b48c; font-family: Arial, sans-serif; }
 
-        /* HEADER CON logo.jpg */
+        /* HEADER MÁS ESTRECHO */
         header {
             background-image: url('logo.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 400px;
-            position: relative;
+            min-height: 220px; /* Altura más equilibrada */
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
-        /* NAVEGACIÓN PC (Botón a la izquierda del menú) */
         .contenedor-nav {
             width: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
+            justify-content: center;
+            padding: 15px;
             box-sizing: border-box;
+            background: rgba(0,0,0,0.3);
         }
 
         .menu-links {
@@ -45,7 +43,7 @@
             color: white;
             font-weight: 900;
             font-family: 'Arial Black', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-shadow: 2px 2px 4px #000;
         }
 
@@ -53,41 +51,48 @@
             color: white;
             text-align: center;
             font-family: 'Arial Black', sans-serif;
-            font-size: 2.2rem;
-            margin-top: 50px;
+            font-size: 1.6rem;
+            margin-top: 25px;
             text-shadow: 3px 3px 6px #000;
         }
 
-        /* CONTENIDO (FOTO Y TEXTO SOBRE FONDO ARENA) */
+        /* SECCIÓN CENTRAL - BOTÓN MÁS PEQUEÑO */
         .seccion-contenido {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 800px;
+            margin: 25px auto;
             text-align: center;
             padding: 0 20px;
         }
 
-        .foto-autor {
-            width: 300px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        .caja-youtube-pequena {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px; /* Menos relleno */
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .caja-youtube-pequena p {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0 0 8px 0;
+            font-size: 0.75rem; /* Texto de aviso más pequeño */
+            color: #333;
         }
 
         .nombre-autor {
             font-family: 'Arial Black', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
             color: #000;
         }
 
         .texto-bio {
-            line-height: 1.8;
+            line-height: 1.6;
             color: #000;
-            font-size: 1.15rem;
-            text-align: center;
+            font-size: 1rem;
         }
 
-        /* FOOTER NEGRO SOBRE BLANCO */
         footer {
             background-color: white;
             color: black;
@@ -98,61 +103,61 @@
             border-top: 2px solid #000;
         }
 
-        /* MÓVIL (GRID PARA QUE NADA SE MONTE) */
-        @media (max-width: 768px) {
-            .contenedor-nav { 
-                flex-direction: column !important; 
-                padding: 10px !important;
-                background: rgba(0,0,0,0.4); /* Sombreado para que se lean los links */
-            }
+        /* AJUSTE MÓVIL */
+        @media (max-width: 600px) {
+            header { min-height: 160px; }
             .menu-links {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr); /* Enlaces de 2 en 2 */
-                gap: 10px;
-                width: 100%;
-                text-align: center;
-                margin-top: 15px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
             }
-            .menu-links li:last-child { grid-column: span 2; } /* Contacto centrado abajo */
-            .foto-autor { width: 90%; max-width: 280px; }
-            .titulo-principal { font-size: 1.4rem !important; margin-top: 20px !important; }
+            .menu-links li:last-child { grid-column: span 3; }
+            .titulo-principal { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="contenedor-nav">
-            <div style="transform: scale(0.85);">
-                <div class="g-ytsubscribe" data-channelid="UCDJxhJg8hK5650HCzFznZ6w" data-layout="default" data-count="default"></div>
-            </div>
-            
-            <nav>
-                <ul class="menu-links">
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="Ruti.html">RUTI</a></li>
-                    <li><a href="poemario.html">POEMARIO</a></li>
-                    <li><a href="libros.html">LIBROS</a></li>
-                    <li><a href="contacto.html">CONTACTO</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="contenedor-nav">
+            <ul class="menu-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="Ruti.html">RUTI</a></li>
+                <li><a href="poemario.html">POEMARIO</a></li>
+                <li><a href="libros.html">LIBROS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
         <h1 class="titulo-principal">LAS AVENTURAS DEL PATO RUTI <br> Y SUS KOMPIS</h1>
     </header>
 
     <main class="seccion-contenido">
-        <img src="PRUEBA PAGINA WEB 2.JPG" alt="Julio Nieto Molina" class="foto-autor">
+        
+        <div class="caja-youtube-pequena">
+            <p>¡SUSCRÍBETE!</p>
+            <div style="transform: scale(0.85); transform-origin: top center;">
+                <div class="g-ytsubscribe" data-channelid="UCDJxhJg8hK5650HCzFznZ6w" data-layout="default" data-count="default"></div>
+            </div>
+        </div>
         
         <div class="nombre-autor">Julio Nieto Molina</div>
         
         <div class="texto-bio">
-            <p>Julio Nieto Molina, nacido en Cartagena en Julio de 1970, con aire granadino, y un toque abaranero, aunque se declara aborigen de Mar de Cristal...</p>
-            <p>Su primer poemario en vez la luz fue Agua Flamenca...</p>
+            <P>Julio Nieto Molina, nacido en Cartagena en Julio de 1970, con aire granadino, y un toque abaranero, aunque se declara aborigen de Mar de Cristal. Su primer poemario en vez la luz fue Agua Flamenca, autoeditado en Cartagena. Su segundo poemario es Soledad, locura y libertad (2022) editado por Aliar Ediciones. También ha autoeditado junto a un grupo de amigos un poemario titulado Quietud azul.
+Desde que aprendió a escribir ha tonteado con la escritura hasta realizar sus primeros relatillos y poemarios, todos ellos guardados en el baúl de su casa. Ha publicado además varios tebeos basados en relatos y relatillos gráficos, titulados Pato Ruti y sus Kompis, con unos personajes creados por el mismo... 
+RUTI nació dibujando narices, en una habitación mágica, el comedor de la casa de mis papis.
+Nació entre apuntes de Farmacognosia pues es un dibujo del nuevo siglo XXI, nació no me acuerdo muy bien pero por allá en los albores de finales del 2001 o principios del 2002.
+El primero fue RUTI, luego fueron llegando el resto, DURRI, el gato DÚ,..pasando por GORRI, en el 2020 y por ahora el último es HELL en el 2022.
+RUTI Y SUS KOMPIS, nacieron como una necesidad de expresar mi mundo interior y no es solo un dibujo o un mensaje es ponerle una nota de humor a este mundo, a este mundo que a veces es una mierda y otras veces una maravilla y como dice RUTI esta vida es una mierda maravillosa.
+RUTI es un pato del Mar Menor, de Mar de Cristal, aunque a veces se puede confundir con un loro, de como parlotea, pero no es de una gran verborrea, si no breve y conciso, como todos los Kompis y también como su creador, el menda lerenda, que escribe estas líneas.
+Así sin más, comienza una nueva aventura como es cada viñeta que empieza…
+
+</P>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 CREADO POR BORJA </p>
+        <p>&copy; 2026 CREADO POR BORJA - TRIPULANTES DE RUTI</p>
     </footer>
 
 </body>
