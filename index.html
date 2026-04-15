@@ -3,60 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Las Aventuras del Pato Ruti y sus Kompis</title>
+    <title>Las Aventuras del Pato Ruti</title>
     <link rel="stylesheet" href="index.css">
-<script src="https://apis.google.com/js/platform.js"></script>
-</head>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <style>
+        /* FONDO GENERAL QUE QUIERES RESPETAR */
+        body { margin: 0; padding: 0; background-color: #d2b48c; font-family: Arial, sans-serif; }
 
+        /* HEADER CON logo.jpg */
+        header {
+            background-image: url('logo.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* NAVEGACIÓN PC (Botón a la izquierda del menú) */
+        .contenedor-nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .menu-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 900;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.85rem;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .titulo-principal {
+            color: white;
+            text-align: center;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2.2rem;
+            margin-top: 50px;
+            text-shadow: 3px 3px 6px #000;
+        }
+
+        /* CONTENIDO SIN BLOQUE BLANCO (SOBRE EL FONDO DEL BODY) */
+        .seccion-contenido {
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .foto-autor {
+            width: 300px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nombre-autor {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #000; /* Letras negras sobre el fondo arena */
+        }
+
+        .texto-bio {
+            line-height: 1.8;
+            color: #000; /* Letras negras para que se lean bien */
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        /* FOOTER LETRAS NEGRAS FONDO BLANCO */
+        footer {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.8rem;
+            border-top: 2px solid #000;
+        }
+
+        /* MÓVIL (GRID PARA QUE NO SE CORTE NADA) */
+        @media (max-width: 768px) {
+            .contenedor-nav { flex-direction: column; gap: 20px; }
+            .menu-links {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px 10px;
+            }
+            .menu-links li:last-child { grid-column: span 3; }
+            .foto-autor { width: 100%; max-width: 280px; }
+        }
+    </style>
+</head>
 <body>
-<header class="cabecera-arte">
-    <nav style="position: absolute; top: 25px; right: 20px; z-index: 100;">
-    <ul style="display: flex !important; flex-direction: row !important; list-style: none; gap: 18px; margin: 0; padding: 0; align-items: center;">
-        
-        <li style="display: flex; align-items: center; margin-top: 15px; order: 1;">
-            <div style="transform: scale(0.75);">
+
+    <header>
+        <div class="contenedor-nav">
+            <div style="transform: scale(0.85);">
                 <div class="g-ytsubscribe" data-channelid="UCDJxhJg8hK5650HCzFznZ6w" data-layout="default" data-count="default"></div>
             </div>
-        </li>
-
-        <li style="order: 2;"><a href="index.html" style="text-decoration:none; color:white; font-weight:900; font-family:'Arial Black'; font-size:0.8rem; text-shadow:2px 2px 4px #000;">INICIO</a></li>
-        <li style="order: 3;"><a href="Ruti.html" style="text-decoration:none; color:white; font-weight:900; font-family:'Arial Black'; font-size:0.8rem; text-shadow:2px 2px 4px #000;">RUTI</a></li>
-        <li style="order: 4;"><a href="poemario.html" style="text-decoration:none; color:white; font-weight:900; font-family:'Arial Black'; font-size:0.8rem; text-shadow:2px 2px 4px #000;">POEMARIO</a></li>
-        <li style="order: 5;"><a href="libros.html" style="text-decoration:none; color:white; font-weight:900; font-family:'Arial Black'; font-size:0.8rem; text-shadow:2px 2px 4px #000;">LIBROS</a></li>
-        <li style="order: 6;"><a href="contacto.html" style="text-decoration:none; color:white; font-weight:900; font-family:'Arial Black'; font-size:0.8rem; text-shadow:2px 2px 4px #000;">CONTACTO</a></li>
-    </ul>
-</nav>
-
+            
+            <nav>
+                <ul class="menu-links">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="Ruti.html">RUTI</a></li>
+                    <li><a href="poemario.html">POEMARIO</a></li>
+                    <li><a href="libros.html">LIBROS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
         <h1 class="titulo-principal">LAS AVENTURAS DEL PATO RUTI <br> Y SUS KOMPIS</h1>
     </header>
 
-    <main class="contenedor-biografia">
-        <img src="PRUEBA PAGINA WEB 2.jpg" alt="Julio Nieto Molina" class="foto-julio-central">
+    <main class="seccion-contenido">
+        <img src="PRUEBA PAGINA WEB 2.JPG" alt="Julio Nieto Molina" class="foto-autor">
         
-       <div class="texto-presentacion">
+        <div class="nombre-autor">Julio Nieto Molina</div>
+        
+        <div class="texto-bio">
             <p>
-                Julio Nieto Molina, nacido en Cartagena en Julio de 1970, con aire granadino, y un toque abaranero, aunque se declara aborigen de Mar de Cristal. Su primer poemario en vez la luz fue Agua Flamenca, autoeditado en Cartagena. Su segundo poemario es Soledad, locura y libertad (2022) editado por Aliar Ediciones. También ha autoeditado junto a un grupo de amigos un poemario titulado Quietud azul.
+             Julio Nieto Molina, nacido en Cartagena en Julio de 1970, con aire granadino, y un toque abaranero, aunque se declara aborigen de Mar de Cristal. Su primer poemario en vez la luz fue Agua Flamenca, autoeditado en Cartagena. Su segundo poemario es Soledad, locura y libertad (2022) editado por Aliar Ediciones. También ha autoeditado junto a un grupo de amigos un poemario titulado Quietud azul.
+Desde que aprendió a escribir ha tonteado con la escritura hasta realizar sus primeros relatillos y poemarios, todos ellos guardados en el baúl de su casa. Ha publicado además varios tebeos basados en relatos y relatillos gráficos, titulados Pato Ruti y sus Kompis, con unos personajes creados por el mismo... 
+RUTI nació dibujando narices, en una habitación mágica, el comedor de la casa de mis papis.
+Nació entre apuntes de Farmacognosia pues es un dibujo del nuevo siglo XXI, nació no me acuerdo muy bien pero por allá en los albores de finales del 2001 o principios del 2002.
+El primero fue RUTI, luego fueron llegando el resto, DURRI, el gato DÚ,..pasando por GORRI, en el 2020 y por ahora el último es HELL en el 2022.
+RUTI Y SUS KOMPIS, nacieron como una necesidad de expresar mi mundo interior y no es solo un dibujo o un mensaje es ponerle una nota de humor a este mundo, a este mundo que a veces es una mierda y otras veces una maravilla y como dice RUTI esta vida es una mierda maravillosa.
+RUTI es un pato del Mar Menor, de Mar de Cristal, aunque a veces se puede confundir con un loro, de como parlotea, pero no es de una gran verborrea, si no breve y conciso, como todos los Kompis y también como su creador, el menda lerenda, que escribe estas líneas.
+Así sin más, comienza una nueva aventura como es cada viñeta que empieza…
+
+
+
+
+
+
             </p>
-            <p>
-                RUTI nació dibujando narices, en una habitación mágica, el comedor de la casa de mis papis. Nació entre apuntes de Farmacognosia pues es un dibujo del nuevo siglo XXI, nació no me acuerdo muy bien pero por allá en los albores de finales del 2001 o principios del 2002.
-            </p>
-            <p>
-                RUTI Y SUS KOMPIS, nacieron como una necesidad de expresar mi mundo interior y no es solo un dibujo o un mensaje es ponerle una nota de humor a este mundo... como dice RUTI esta vida es una mierda maravillosa.
-            </p>
-            <p>
-                RUTI es un pato del Mar Menor, de Mar de Cristal, aunque a veces se puede confundir con un loro, de como parlotea, pero no es de una gran verborrea, si no breve y conciso, como todos los Kompis y también como su creador, el menda lerenda, que escribe estas líneas.
-            </p>
-            <p style="font-style: italic;">
-                Así sin más, comienza una nueva aventura como es cada viñeta que empieza…
-            </p>
+            
         </div>
     </main>
 
+    <footer>
+        <p>&copy; 2026 CREADO POR BORJA ANGOSTO NIETO</p>
+    </footer>
 
-
-  
-
-    
 </body>
 </html>
-
